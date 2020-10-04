@@ -18,7 +18,16 @@ html{
     font-size:10px;
     font-family:'Roboto',sans-serif;
     color:#eee;
+    min-height: -webkit-fill-available;
 }
+
+/* html { 
+    background: url(images/sitebg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } */
 
 body{
     width: 100%;
@@ -624,17 +633,35 @@ input[type="submit"]:hover{
         margin:0;
         order:2;
     }
-    html{
-        margin-right: -2.3rem;
-    }
 
     .timeline p{
         font-size: 1.6rem;
     }
 
     .timeline .date:before{
-
+        font-size: 1.4rem;
     }
 
+    form{
+        width: 100%;
+    }
 
+    .up{
+        right: 2rem;
+    }
+    .container{
+        margin-right:auto;
+        margin-left: auto;
+    }
+    .input{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about p{
+        padding: 1rem;
+    }
+    .body{
+        height: 100vh;
+    } 
+    /* https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser */
 }
