@@ -672,3 +672,20 @@ input[type="submit"]:hover{
 
 
 
+@media screen and (max-width:1000px){
+    .video-container{
+        width:500px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .video-container{
+        width:300px;
+    }
+}
+
+@media screen and (max-width:350px){
+    .video-container{
+        width:200px;
+    }
+}
