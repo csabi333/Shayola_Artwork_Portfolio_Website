@@ -1,5 +1,12 @@
 
 $(document).ready(function(){
+
+    addAllEventListeners();
+    disableAOSonMobile();
+
+});
+
+function addAllEventListeners(){
     $('.menu-toggler').on('click',function(){
         $('.menu-toggler').toggleClass('open');
         $('.top-nav').toggleClass('open');
@@ -21,9 +28,10 @@ $(document).ready(function(){
         },1500);
     });
 
-    $('.portfolio .open-modal').on('click',function(){
-        /* const modal=document.querySelector('.modal');
-        modal.style.display="block";  */
+    $('.portfolio .open-modal').on('click',function(e){
+        $('.modal .modal-content').html('');
+        const galleryName = e.target.parentNode.childNodes[1].innerHTML;
+        setHTMLForModal(galleryName);
         $('.modal').show();
         $('body').attr("scroll","no");
         $('body').attr("style","overflow:hidden");
@@ -39,7 +47,9 @@ $(document).ready(function(){
         $('.top-nav').removeClass('open');
         $('.menu-toggler').removeClass('open');
       });
-    
+}
+
+function disableAOSonMobile(){
     var isMobile = false;
     // mobile device detection
     if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -61,4 +71,50 @@ $(document).ready(function(){
             elements[i].removeAttribute('data-aos');
         }
     }
-});
+}
+
+function setHTMLForModal(galleryName){
+    
+    /* 
+    //i have no clue why this isnt working so i had to hardcode the innerhtml, tried creating dom elements and then appending them to parent but same result
+    const modalContent =document.querySelector('.modal .modal-content');
+    console.log(modalContent);
+
+    for(let i=1;i<9;i++){
+        //$('.modal .modal-content').append(`<a href="images/${galleryName.toLowerCase()}gallery/img${i}.jpg" class="img-${i}">
+        //<i class="icon ion-md-expand"></i></a>`);
+        modalContent.innerHTML+=`<a href="images/${galleryName.toLowerCase()}gallery/img${i}.jpg" class="img-${i}">
+        <i class="icon ion-md-expand"></i></a>`;
+    }
+ */
+    $('.modal .modal-content').html(`<div class="image-gallery">
+    <a href="images/${galleryName.toLowerCase()}gallery/img1.jpg" class="img-1">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img2.jpg" class="img-2">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img3.jpg" class="img-3">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img4.jpg" class="img-4">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img5.jpg" class="img-5">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img6.jpg" class="img-6">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img7.jpg" class="img-7">
+        <i class="icon ion-md-expand"></i>
+    </a>
+    <a href="images/${galleryName.toLowerCase()}gallery/img8.jpg" class="img-8">
+        <i class="icon ion-md-expand"></i>
+    </a>
+</div>`);
+
+for(let i=1;i<9;i++){
+    document.querySelector(`.img-${i}`).setAttribute("style",`grid-area:img-${i};background-image:url(images/${galleryName.toLowerCase()}gallery/img${i}.jpg);`)
+ }
+}
