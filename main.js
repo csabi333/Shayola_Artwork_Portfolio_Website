@@ -21,6 +21,20 @@ $(document).ready(function(){
         },1500);
     });
 
+    $('.portfolio .open-modal').on('click',function(){
+        /* const modal=document.querySelector('.modal');
+        modal.style.display="block";  */
+        $('.modal').show();
+        $('body').attr("scroll","no");
+        $('body').attr("style","overflow:hidden");
+    })
+
+    $('.modal .close').on('click',function(){
+        $('.modal').hide();
+        $('body').attr("scroll","yes");
+        $('body').attr("style","overflow:show");
+    })
+
     $(window).scroll(function() {
         $('.top-nav').removeClass('open');
         $('.menu-toggler').removeClass('open');
