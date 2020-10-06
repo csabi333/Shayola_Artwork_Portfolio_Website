@@ -22,14 +22,6 @@ html{
     
 }
 
-/* html { 
-    background: url(images/sitebg.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  } */
-
 body{
     width: 100%;
     height: 100%;
@@ -229,7 +221,6 @@ header{
 }
 
 .about-heading {
-    text-align: center;
     text-transform: uppercase;
     line-height: 0;
     margin-bottom: 6rem;
@@ -239,12 +230,14 @@ header{
     font-size: 10rem;
     opacity: .3;
     font-family: 'Billion Dreams',sans-serif;
+    text-align: start;
 }
 
 .about-heading h6{
     font-size: 4rem;
     font-weight: 300;
     font-family: 'Billion Dreams',sans-serif;
+    text-align: right;
 }
 
 .fav-font{
@@ -268,8 +261,8 @@ header{
 .social-media i{
     font-size: 5rem;
     transition: color 650ms;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .fa-facebook-square:hover{
@@ -287,6 +280,9 @@ header{
 .fa-deviantart:hover{
     color:#00e59b;
 }
+.fa-artstation:hover{
+    color:#00cae5;
+}
 
 .my-skills{
     margin-top: 10rem;
@@ -302,6 +298,10 @@ header{
     justify-content: center;
     align-items: center;
     padding:2rem;
+    transition: color 650ms;
+}
+.skill:hover{
+    cursor:pointer;
 }
 
 .skill h1{
@@ -325,6 +325,15 @@ header{
     font-size: 5rem;
     margin:auto;
     transform:rotate(-45deg);
+    transition: color 650ms;
+}
+
+.skill:hover .icon-container{
+    border:3px solid var(--main-accent-color2);
+    background-color: var(--main-accent-color);
+}
+.skill:hover .icon-container i{
+    color:var(--main-accent-color2);
 }
 
 .portfolio-item{
@@ -502,6 +511,17 @@ input[type="submit"]:hover{
 
 .copyright p{
     font-size: 1.4rem;
+}
+
+.modal{
+    opacity:0;
+    transform:translateX(-200px);
+    pointer-events: none;
+    position:absolute;
+    width:100%;
+    max-width: 480px;
+    background: #fff;
+
 }
 
 
