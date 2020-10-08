@@ -36,12 +36,13 @@ function addAllEventListeners(){
         $('body').attr("scroll","no");
         $('body').attr("style","overflow:hidden");
     })
-
-    $('.modal .close').on('click',function(){
+    
+    $('.close').on('click',function(){
         $('.modal').hide();
         $('body').attr("scroll","yes");
         $('body').attr("style","overflow:show");
     })
+    
 
     $(window).scroll(function() {
         $('.top-nav').removeClass('open');
@@ -72,7 +73,6 @@ function disableAOSonMobile(){
         }
     }
 }
-
 function setHTMLForModal(galleryName){
     
     /* 
@@ -87,7 +87,7 @@ function setHTMLForModal(galleryName){
         <i class="icon ion-md-expand"></i></a>`;
     }
  */
-    $('.modal .modal-content').html(`<div class="image-gallery">
+    $('.modal .modal-content').append(`<div class="image-gallery">
     <a href="images/${galleryName.toLowerCase()}gallery/img1.jpg" class="img-1">
         <i class="icon ion-md-expand"></i>
     </a>
@@ -114,7 +114,9 @@ function setHTMLForModal(galleryName){
     </a>
 </div>`);
 
+
 for(let i=1;i<9;i++){
     document.querySelector(`.img-${i}`).setAttribute("style",`grid-area:img-${i};background-image:url(images/${galleryName.toLowerCase()}gallery/img${i}.jpg);`)
  }
+ 
 }

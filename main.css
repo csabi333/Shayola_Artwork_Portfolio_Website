@@ -274,9 +274,6 @@ header{
 .fa-instagram-square:hover{
     color:#C13584;
 }
-.fa-linkedin-square:hover{
-    color:#2867B2;
-}
 .fa-deviantart:hover{
     color:#00e59b;
 }
@@ -513,6 +510,14 @@ input[type="submit"]:hover{
     font-size: 1.4rem;
 }
 
+i{
+    font-size: 5rem;
+    transition: color 650ms;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -524,35 +529,53 @@ input[type="submit"]:hover{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+}
   
-  /* Modal Content/Box */
-  .modal-content {
+ 
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: auto; /* 15% from the top and centered */
+    margin-top:10%;
     padding: 20px;
-    color:black;
+    position: relative;
+    /* color:black; */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
+    width: 100%; /* Could be more or less, depending on screen size */
+}
+
   /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+.close, .fa-times{
+    color: greenyellow;
+    z-index: 1000;
+    position: absolute;
+    font-size: 25px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+    top:-10px;
+    right:-10px;
+    margin:0;
+    max-width: 20px;
+
+}
+.relative{
+    width:80%;
+    position: relative;
+    margin: auto;
+}
+
+.fa-times{
+     color:red;
+ }
+
+.close:hover,
+.close:focus,.fa-times:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+} 
 
 
-  .image-gallery{
+.image-gallery{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -561,6 +584,7 @@ input[type="submit"]:hover{
         'img-1 img-2 img-3 img-4'
         'img-5 img-6 img-7 img-8';
     }
+
 
 .image-gallery a{
     width:100%;
