@@ -48,6 +48,32 @@ function addAllEventListeners(){
         $('.top-nav').removeClass('open');
         $('.menu-toggler').removeClass('open');
       });
+    
+    const btns = document.querySelectorAll('.tab-btn');
+    const btnContainer = document.querySelector('.btn-container');
+    const articles = document.querySelectorAll('.content');
+      
+    btnContainer.addEventListener('click',function(e){
+        const id = e.target.dataset.id;
+        document.querySelector('.portfolio-img img').src=`images/${id}.jpg`;
+
+        if(id){
+            
+            btns.forEach(function(btn){
+            btn.classList.remove('active');
+            e.target.classList.add('active');
+            })
+      
+            articles.forEach(function(article){
+            article.classList.remove('active');
+            })
+      
+            const element = document.getElementById(id);
+            element.classList.add('active');
+        }
+      
+      })
+    
 }
 
 function disableAOSonMobile(){
@@ -75,48 +101,25 @@ function disableAOSonMobile(){
 }
 function setHTMLForModal(galleryName){
     
-    /* 
-    //i have no clue why this isnt working so i had to hardcode the innerhtml, tried creating dom elements and then appending them to parent but same result
-    const modalContent =document.querySelector('.modal .modal-content');
-    console.log(modalContent);
+    const modalContent = document.querySelector('.modal .modal-content');
+    const div = document.createElement('div');
+    div.classList.add('image-gallery');
 
-    for(let i=1;i<9;i++){
-        //$('.modal .modal-content').append(`<a href="images/${galleryName.toLowerCase()}gallery/img${i}.jpg" class="img-${i}">
-        //<i class="icon ion-md-expand"></i></a>`);
-        modalContent.innerHTML+=`<a href="images/${galleryName.toLowerCase()}gallery/img${i}.jpg" class="img-${i}">
-        <i class="icon ion-md-expand"></i></a>`;
+for(let j=1;j<9;j++){
+    const a = document.createElement('a');
+    const i = document.createElement('i');
+    a.href=`images/${galleryName.toLowerCase()}gallery/img${j}.jpg`
+    a.classList.add(`img-${j}`);
+    i.classList.add("icon","ion-md-expand");
+    a.appendChild(i);
+    div.appendChild(a);
     }
- */
-    $('.modal .modal-content').append(`<div class="image-gallery">
-    <a href="images/${galleryName.toLowerCase()}gallery/img1.jpg" class="img-1">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img2.jpg" class="img-2">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img3.jpg" class="img-3">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img4.jpg" class="img-4">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img5.jpg" class="img-5">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img6.jpg" class="img-6">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img7.jpg" class="img-7">
-        <i class="icon ion-md-expand"></i>
-    </a>
-    <a href="images/${galleryName.toLowerCase()}gallery/img8.jpg" class="img-8">
-        <i class="icon ion-md-expand"></i>
-    </a>
-</div>`);
+
+    modalContent.appendChild(div);
 
 
-for(let i=1;i<9;i++){
-    document.querySelector(`.img-${i}`).setAttribute("style",`grid-area:img-${i};background-image:url(images/${galleryName.toLowerCase()}gallery/img${i}.jpg);`)
+for(let j=1;j<9;j++){
+    document.querySelector(`.img-${j}`).setAttribute("style",`grid-area:img-${j};background-image:url(images/${galleryName.toLowerCase()}gallery/img${j}.jpg);`)
  }
  
 }

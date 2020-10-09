@@ -137,40 +137,60 @@
         <div class="container">
             <div class="section-heading" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="fav-font" >Portfolio</h1>
-                <h6>View some of my recent work</h6>
             </div>
-            <div class="portfolio-item" data-aos="fade-right" data-aos-delay="300">
-                <div class="portfolio-img has-margin-right">
-                    <img src="images/portitem1.jpg" alt="">
+            <div class="portfolio-item" >
+                <div class="portfolio-img has-margin-right" data-aos="fade-right" data-aos-delay="300">
+                    <img src="images/tab1.jpg" alt="">
                 </div>
                 <div class="portfolio-description">
-                    <h1>Artwork</h1>
-                    <p>Hella thundercats cray try-hard keytar 8-bit master cleanse umami selvage coloring book meditation mumblecore ramps.</p>
-                    <a href="artworkgallery.html" class="cta">See The Gallery Of My Best Artwork</a>
-                    <button class="open-modal">See Gallery</button>
-                </div>
-            </div>
-            <div class="portfolio-item" data-aos="fade-left" data-aos-delay="300">
-                <div class="portfolio-description has-margin-right">
-                    <h1>Portraits</h1>
-                    <p>Hella thundercats cray try-hard keytar 8-bit master cleanse umami selvage coloring book meditation mumblecore ramps.</p>
-                    <a href="portraitsgallery.html" class="cta">See The Gallery Of The Portraits I Made</a>
-                    <button class="open-modal">See Gallery</button>
-                </div>
-                <div class="portfolio-img">
-                    <img src="images/portitem3.jpg" alt="">
-                </div>
-                
-            </div>
-            <div class="portfolio-item" data-aos="fade-right" data-aos-delay="300">
-                <div class="portfolio-img has-margin-right">
-                    <img src="images/portitem2.jpg" alt="">
-                </div>
-                <div class="portfolio-description">
-                    <h1>Cosplay</h1>
-                    <p>Hella thundercats cray try-hard keytar 8-bit master cleanse umami selvage coloring book meditation mumblecore ramps.</p>
-                    <a href="cosplaygallery.html" class="cta">See The Gallery Of My Award Winning Cosplays</a>
-                    <button class="open-modal">See Gallery</button>
+                    <article class='artwork-tabs' data-aos="fade-up" data-aos-delay="300">
+                        <!-- btn container -->
+                        <div class="btn-container">
+                          <button class='tab-btn active' data-id="tab1" data-aos="fade-up" data-aos-delay="0">First tab</button>
+                          <button class='tab-btn' data-id="tab2" data-aos="fade-up" data-aos-delay="400">Second tab</button>
+                          <button class='tab-btn' data-id="tab3" data-aos="fade-up" data-aos-delay="500">Third tab</button>
+                        </div>
+                        <article class="about-content" data-aos="fade-up" data-aos-delay="500">
+                          <div class="content active" id="tab1">
+                            <h1 class="fav-font">Artwork</h1>
+                            <p>
+                              I'm baby wolf pickled schlitz try-hard normcore marfa man bun mumblecore vice
+                              pop-up XOXO lomo kombucha glossier bicycle rights. Umami kinfolk salvia jean
+                              shorts offal venmo. Knausgaard tilde try-hard, woke fixie banjo man bun. Small
+                              batch tumeric mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
+                              direct trade hoodie ugh chambray, craft beer pork belly flannel tacos
+                              single-origin coffee art party migas plaid pop-up.
+                            </p>
+                            <button class="open-modal">See Gallery</button>
+                          </div>
+                          <div class="content" id="tab2">
+                            <h1 class="fav-font">Portraits</h1>
+                            <p>
+                              Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth crucifix offal
+                              deep v hella biodiesel. Church-key listicle polaroid put a bird on it
+                              chillwave palo santo enamel pin, tattooed meggings franzen la croix cray.
+                              Retro yr aesthetic four loko tbh helvetica air plant, neutra palo santo tofu
+                              mumblecore. Hoodie bushwick pour-over jean shorts chartreuse shabby chic. Roof
+                              party hammock master cleanse pop-up truffaut, bicycle rights skateboard
+                              affogato readymade sustainable deep v live-edge schlitz narwhal.
+                            </p>
+                            <button class="open-modal">See Gallery</button>
+                          </div>
+                          <div class="content" id="tab3">
+                            <h1 class="fav-font">Cosplay</h1>
+                            <p>
+                              Chambray authentic truffaut, kickstarter brunch taxidermy vape heirloom four
+                              dollar toast raclette shoreditch church-key. Poutine etsy tote bag, cred
+                              fingerstache leggings cornhole everyday carry blog gastropub. Brunch biodiesel
+                              sartorial mlkshk swag, mixtape hashtag marfa readymade direct trade man braid
+                              cold-pressed roof party. Small batch adaptogen coloring book heirloom.
+                              Letterpress food truck hammock literally hell of wolf beard adaptogen everyday
+                              carry. Dreamcatcher pitchfork yuccie, banh mi salvia venmo photo booth quinoa
+                              chicharrones.
+                            </p>
+                            <button class="open-modal">See Gallery</button>
+                          </div>
+                        </article>
                 </div>
             </div>
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
@@ -261,7 +281,7 @@
     </section>
 
     <div class="modal">
-        
+
         <div class="relative">
         <span class="close "><i class="fas fa-times" ></i></span> 
         <div class="modal-content"> 

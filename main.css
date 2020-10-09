@@ -350,7 +350,8 @@ header{
 }
 .portfolio-img{
     width: 100rem;
-    flex:1;
+    flex:.75;
+    max-height: 50vh;
 }
 
 .portfolio-description{
@@ -569,7 +570,6 @@ i{
 
 .close:hover,
 .close:focus,.fa-times:hover {
-    color: black;
     text-decoration: none;
     cursor: pointer;
 } 
@@ -810,4 +810,75 @@ i{
     .video-container{
         width:200px;
     }
+}
+
+.artwork-tabs {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 50vh;
+  }
+
+.btn-container {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab-btn:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+  }
+
+.tab-btn:nth-child(3) {
+    border-top-right-radius: 0.5rem;
+  }
+
+.tab-btn {
+    padding: 1rem 0;
+    border: none;
+    text-transform: capitalize;
+    font-size: 2rem;
+    display: block;
+    color:var(--main-accent-color);
+    background: var(--main-accent-color2);
+    cursor: pointer;
+    transition: all 0.3s linear;
+    letter-spacing: 0.25rem;
+}
+
+.tab-btn:hover:not(.active) {
+    background: var(--main-accent-color);
+    color: var(--main-accent-color2);
+}
+
+.tab-btn.active {
+    background: var(--main-accent-color3);
+    color:var(--main-accent-color2);
+}
+
+.content{
+    display:none;
+    padding:10px;
+    
+}
+
+.content.active{
+    display: block;
+}
+
+.open-modal{
+    background-color: var(--main-accent-color);
+    padding:1rem;
+    border:none;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 1rem;
+    right:1rem;
+    cursor:pointer;
+}
+
+.about-content{
+    position: relative;
 }
